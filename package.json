@@ -4,7 +4,8 @@
   "description": "sae-byeok for squid game",
   "main": "index.js",
   "scripts": {
-    "dev": "node bin/dev.js"
+    "dev": "node bin/dev.js",
+    "start": "node index.js"
   },
   "keywords": [
     "discord",
