@@ -35,7 +35,6 @@ client.on('message', message => {
 	
 	// if people mention us, tell them about our prefix
 	if(message.mentions.users.size){
-		console.log("ada")
 		if(message.mentions.users.first().id == client.user.id){
 			return message.reply(`my prefix is \`\`${prefix}\`\``)
 		}
