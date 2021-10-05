@@ -8,7 +8,7 @@ const prefix = process.env.Prefix;
 // export module
 module.exports = {
 	name : "help",
-	description : "BOT help commands",
+	description : "A list of bot commands and tips.",
 	aliases : ["?","h"],
 	ussage : "[command]",
 	hidden : false,
