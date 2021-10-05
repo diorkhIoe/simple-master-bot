@@ -21,7 +21,6 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 	console.log(`Loading: ${file} as ${command.name}`)
 	// set if there aliase !== null
-	// // with the key as the each of command aliases and the value as the exported module
 	command.aliases.map(e=>{
 		// console.log(e);
 		client.commands.set(e, command);
