@@ -1,13 +1,10 @@
 {
-  "name": "master-bot",
+  "name": "sae-byeok",
   "version": "1.0.0",
-  "description": "just dumies bot",
+  "description": "sae-byeok for squid game",
   "main": "index.js",
   "scripts": {
-    "dev": "node bin/dev.js",
-    "start": "react-scripts start",
-    "test": "react-scripts tset",
-    "eject": "react-scripts eject"
+    "dev": "node bin/dev.js"
   },
   "keywords": [
     "discord",
