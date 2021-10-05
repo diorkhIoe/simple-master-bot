@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const botClient = require("./structures/botClient");
 const client = new botClient();
 const owner = process.env.Owner;
-const prefix = process.env.Prefix;
+const prefix = "!"
 const Token = process.env.TOKEN; 
 
 const fs = require('fs');
