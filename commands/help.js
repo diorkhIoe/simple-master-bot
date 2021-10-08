@@ -33,16 +33,15 @@ module.exports = {
 			});
 
 			var batas = "+--------+------------+----------------------+",
-			header = `\`\`\`\n| #${util.tn("No",1)} | ${util.tn("commands",2)} | ${util.tn("aliases",4)} |\n\`\`\``,
-			footer = `ℹ️ *use \`\`${prefix}help [command]\`\` for more info!*\n\n**Link:**\n${util.usefulLnk(client).join("\n")}`;
+			header = `\`\`\`\n| #${util.tn("No",1)} | ${util.tn("commands",2)} | ${util.tn("aliases",4)}\n\`\`\``,
+			footer = `ℹ️  *use \`\`${prefix}help [command]\`\` for more info!`;
 
 			embed
 			.setColor(color.hack)
-			.setAuthor(`${client.user.username} | Help & About`)
+			.setAuthor(`${client.user.username} | List of Commands`)
 			.setDescription(
-				`${desc}\n\n**List of command:**\n${header}\`\`\`css\n${cm.filter(e => {return e !== null} ).join("\n")}\`\`\`\n${footer}`
-				)
-			.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/8/88/Radar2.gif");
+				`The Squid Game Community Discord Bot.\n\n**List of commands:**\n${header}\`\`\`css\n${cm.filter(e => {return e !== null} ).join("\n")}\`\`\`\n${footer}`
+			)
 
 			return message.channel.send(embed);
 
@@ -59,8 +58,6 @@ module.exports = {
 				`**🔸${util.tn("Aliase(s)",3)} :**\n\`\`\` ${comid.aliases.join(", ")}\`\`\`\n`+
 				`${ussage}`
 				)
-			.setThumbnail("https://www.pinclipart.com/picdir/big/44-448449_information-symbol-icon-driverlayer-search-engine-information-icon.png")
-			.setImage("https://cdn.glitch.com/5f7d51b1-406e-43aa-9be8-293ff08f0543%2Fgiff.gif?v=1579915986916");
 
 			return message.channel.send(embed);
 		}
