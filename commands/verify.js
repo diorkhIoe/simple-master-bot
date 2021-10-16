@@ -6,12 +6,12 @@ const db = require('quick.db');
 
 // export module
 module.exports = {
-	name : "verify",
-	description : "Connect your ROBLOX account to the Discord Server.",
-	aliases : ["v"],
+	name : "testverify",
+	description : "",
+	aliases : [],
 	ussage : null,
-	hidden : false,
-	admin : false,
+	hidden : true,
+	admin : true,
 	nsfw : false,
 	async execute(client,message,args){
 		let roles =  [

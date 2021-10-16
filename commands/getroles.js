@@ -6,12 +6,12 @@ const db = require('quick.db');
 
 // export module
 module.exports = {
-	name : "getroles",
+	name : "testgetroles",
 	description : "Refresh your roles",
-	aliases : ["gr"],
+	aliases : [],
 	ussage : null,
-	hidden : false,
-	admin : false,
+	hidden : true,
+	admin : true,
 	nsfw : false,
 	async execute(client,message,args){
 		const username = db.fetch(`${message.author.id}.username`)
