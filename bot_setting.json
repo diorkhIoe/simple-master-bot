@@ -1,10 +1,10 @@
 {
 	"description":"An common Bot, make from scratch",
 	"color":{
-		"info":"#29a37e",
-		"warning":"#29a37e",
-		"danger":"#f0b216",
-		"hack":"#29a37e"
+		"info":"#3c00d4",
+		"warning":"#3c00d4",
+		"danger":"#3c00d4",
+		"hack":"#3c00d4"
 	},
 
 	"usefulLink":[
