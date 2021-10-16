@@ -34,7 +34,7 @@ module.exports = {
 
 			var batas = "+--------+------------+----------------------+",
 			header = `\`\`\`\n| #${util.tn("No",1)} | ${util.tn("commands",2)} | ${util.tn("aliases",4)}\n\`\`\``,
-			footer = `ℹ️  *use \`\`${prefix}help [command]\`\` for more info!`;
+			footer = `ℹ️  *use \`\`${prefix}help [command]\`\` for more info!*`;
 
 			embed
 			.setColor(color.hack)
