@@ -23,7 +23,7 @@ module.exports = {
       return message.channel.send(errorEmbed);
     }
 
-    let roles = require('../../../roles.json');
+    let roles = require('../../roles.json');
     roles = roles.roles;
 
     const UserId = await noblox.getIdFromUsername(username).catch(err => console.error(err));

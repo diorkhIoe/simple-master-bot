@@ -14,7 +14,7 @@ module.exports = {
 	admin : false,
 	nsfw : false,
 	async execute(client,message,args){
-		let roles = require('../../../roles.json');
+		let roles = require('../../roles.json');
     roles = roles.roles;
 
     function SendVerificationMessage(Title, Description, Color) {
