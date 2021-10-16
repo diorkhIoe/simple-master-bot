@@ -14,8 +14,23 @@ module.exports = {
 	admin : false,
 	nsfw : false,
 	async execute(client,message,args){
-		let roles = require('./commands/roles.json');
-    roles = roles.roles;
+		let roles =  [
+      "Superintendent",
+      "Deputy Superintendent",
+      "Associate Superintendent ",
+      "District Office Personnel",
+      "Principal" ,
+      "Assistant Principal",
+      "School Governor" ,
+      "Office Personnel",
+      "Academic Counselor" ,
+      "Core Curriculum Professor",
+      "Elective Curriculum Professor",
+      "IB Program Professor" ,
+      "Specials Program Professor",
+      "Instructional Aide",
+      "Incheon Apprenticeship"
+  ]
 
     function SendVerificationMessage(Title, Description, Color) {
       const Embed = new Discord.MessageEmbed()

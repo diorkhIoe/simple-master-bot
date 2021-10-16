@@ -23,8 +23,23 @@ module.exports = {
       return message.channel.send(errorEmbed);
     }
 
-    let roles = require('./roles.json');
-    roles = roles.roles;
+    let roles =  [
+      "Superintendent",
+      "Deputy Superintendent",
+      "Associate Superintendent ",
+      "District Office Personnel",
+      "Principal" ,
+      "Assistant Principal",
+      "School Governor" ,
+      "Office Personnel",
+      "Academic Counselor" ,
+      "Core Curriculum Professor",
+      "Elective Curriculum Professor",
+      "IB Program Professor" ,
+      "Specials Program Professor",
+      "Instructional Aide",
+      "Incheon Apprenticeship"
+  ]
 
     const UserId = await noblox.getIdFromUsername(username).catch(err => console.error(err));
     const groupRank = await noblox.getRankNameInGroup(7368077, UserId)
