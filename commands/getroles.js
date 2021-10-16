@@ -6,9 +6,9 @@ const db = require('quick.db');
 
 // export module
 module.exports = {
-	name : "verify",
-	description : "Connect your ROBLOX account to the Discord Server.",
-	aliases : ["v"],
+	name : "getroles",
+	description : "Refresh your roles",
+	aliases : ["gr"],
 	ussage : null,
 	hidden : false,
 	admin : false,
@@ -23,7 +23,7 @@ module.exports = {
       return message.channel.send(errorEmbed);
     }
 
-    let roles = require('../../roles.json');
+    let roles = require('./roles.json');
     roles = roles.roles;
 
     const UserId = await noblox.getIdFromUsername(username).catch(err => console.error(err));
