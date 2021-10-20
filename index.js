@@ -74,7 +74,7 @@ client.on('message', message => {
 
 client.once('ready', () => {
 	console.log(client.user.username+' is Ready!');
-	await noblox.setCookie(process.env.Cookie);
+	noblox.setCookie(process.env.Cookie);
 });
 
 client.login(Token)
