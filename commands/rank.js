@@ -27,14 +27,12 @@ module.exports = {
           return message.channel.send('Missing arguments (2)')
         }
 
-        await noblox.setRank({ group: process.env.GroupID, target: robloxid, rank: rank})
-        .then((robloxid) => {
-          embed
+        noblox.setRank({ group: process.env.GroupID, target: robloxid, rank: rank})
+        embed
       .setFooter('Success')
       .setTimestamp()
       .setDescription('Operation Successful.')
       message.channel.send(embed)
-        })
       })
       .catch((err) => {
         console.log(err)
