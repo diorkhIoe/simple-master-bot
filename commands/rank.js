@@ -16,13 +16,10 @@ module.exports = {
 	async execute(client,message,args){
     const embed = new Discord.MessageEmbed();
 		if (message.member.hasPermission("ADMINISTRATOR")){
-
       const robloxname = args[1]
-
       if (!robloxname){
         return message.channel.send('Missing arguments (1)')
       }
-
       const robloxid = await noblox.getIdFromUsername(robloxname)
       .then((robloxid) => {
         const ranks = parseInt(args[2])
@@ -30,12 +27,14 @@ module.exports = {
           return message.channel.send('Missing arguments (2)')
         }
 
-        noblox.setRank({ group: process.env.GroupID, target: robloxid, rank: rank})
-        embed
+        await noblox.setRank({ group: process.env.GroupID, target: robloxid, rank: rank})
+        .then((robloxid) => {
+          embed
       .setFooter('Success')
       .setTimestamp()
       .setDescription('Operation Successful.')
       message.channel.send(embed)
+        })
       })
       .catch((err) => {
         console.log(err)
