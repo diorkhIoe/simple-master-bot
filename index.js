@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botClient = require("./structures/botClient");
+const noblox = require('noblox.js')
 const client = new botClient();
 const owner = process.env.Owner;
 const prefix = "!"
@@ -73,6 +74,7 @@ client.on('message', message => {
 
 client.once('ready', () => {
 	console.log(client.user.username+' is Ready!');
+	await noblox.setCookie(process.env.Cookie);
 });
 
 client.login(Token)
