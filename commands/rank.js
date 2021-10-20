@@ -23,7 +23,7 @@ module.exports = {
         return message.channel.send('Missing arguments (1)')
       }
 
-      const robloxid = await noblox.getIdFromUsername(robloxname)
+      const robloxid = noblox.getIdFromUsername(robloxname)
       .then((robloxid) => {
         const ranks = parseInt(args[2])
         if (!ranks){
