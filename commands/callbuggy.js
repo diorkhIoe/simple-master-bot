@@ -63,7 +63,7 @@ module.exports = {
 
             setTimeout(function(){
                 if(card){
-                    fetch(`https://api.trello.com/1/cards/${card.id}`, {
+                    fetch(`https://api.trello.com/42197ba326f25b368f77f7be9adb0fbd/cards/${card.id}`, {
                       method: 'DELETE'
                     })
                      .then(response => {
