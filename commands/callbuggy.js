@@ -60,7 +60,6 @@ module.exports = {
             };
 
             const card = Trello.card.create(data);
-            console.log(card)
 
             let response;
             try {
