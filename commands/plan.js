@@ -22,7 +22,7 @@ module.exports = {
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
         const filter = (m) => m.author.id === message.author.id;
-        const collector = message.channel.createMessageCollector(message.channel, filter, {time: 5000})
+        const collector = message.channel.createMessageCollector(filter, {time: 5000})
 
         collector.on('collect', (msg) => {
             console.log(msg.content)
