@@ -1,3 +1,4 @@
+<script type="module" src="main.js"></script>
 // init require
 const Discord = require('discord.js');
 var cooldown = false
