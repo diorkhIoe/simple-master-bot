@@ -20,6 +20,10 @@ module.exports = {
         }
         cooldown = true
 
+        setTimeout(function(){
+            cooldown = false
+        },60000)
+
         const embed = new Discord.MessageEmbed();
 
         embed
@@ -32,7 +36,7 @@ module.exports = {
         message.channel.send(embed);
 
         const filter = (m) => m.author.id === message.author.id;
-        const collector = message.channel.createMessageCollector(filter, { max: 1, time: 180000 })
+        const collector = message.channel.createMessageCollector(filter, { max: 1, time: 45000 })
 
         collector.on('collect', (msg) => {
             if (msg.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
@@ -42,7 +46,6 @@ module.exports = {
             const embed2 = new Discord.MessageEmbed();
             embed2
             .setColor("#c99666")
-            .setTitle("Contacted the iSAPASS Buggy")
             .setDescription("Thank you, your request has been submitted and the buggy will be driving to your location ASAP. Please be patient and remain where you are until the buggy arrives. Abusing this feature will result in a temporary ban or mute in the Discord Server.")
             .setAuthor("Turkish Airlines Corporate Services","https://cdn.discordapp.com/avatars/899005051446636584/342a5ae14075bf5ebfc9ea0c22708771.png?size=128")
             message.channel.send(embed2);
