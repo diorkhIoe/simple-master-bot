@@ -22,6 +22,7 @@ module.exports = {
         embed
         .setColor("#c90119")
         .setTitle("TK Flight Planning")
+        .setFooter("Say 'cancel' to end this prompt.")
         .setDescription("You've begun the process of planning a Turkish Airlines Flight. __What **Time** will this flight take place?__")
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
@@ -36,6 +37,7 @@ module.exports = {
 	        const embed2 = new Discord.MessageEmbed();
              embed2
            .setColor("#c90119")
+           .setFooter("Say 'cancel' to end this prompt.")
            .setTitle("TK Flight Planning")
            .setDescription("Great! Now, what will the departing airport be? Please send a **link.**")
            .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
@@ -52,6 +54,7 @@ module.exports = {
                embed3
                .setColor("#c90119")
                .setTitle("TK Flight Planning")
+               .setFooter("Say 'cancel' to end this prompt.")
                .setDescription("Great! Now, what will the **destination** be? Please write this in __plain text.__")
                 .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
                 message.channel.send(embed3);
@@ -66,6 +69,7 @@ module.exports = {
                     embed4
                     .setColor("#c90119")
                     .setTitle("TK Flight Planning")
+                    .setFooter("Say 'cancel' to end this prompt.")
                     .setDescription("Alright, we are almost finished with this prompt. What **day** is the flight going to be?")
                     .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
                     message.channel.send(embed4)
@@ -82,6 +86,7 @@ module.exports = {
                         .setTitle("TK Flight Planning")
                         .setDescription("To wrap up this post, who will be **hosting the flight?** Please say the **Roblox Userame or Discord Tag** of the flight host.")
                         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
+                        .setFooter("Say 'cancel' to end this prompt.")
                         message.channel.send(embed5)
 
                         const filter5 = (m) => m.author.id === message.author.id;
