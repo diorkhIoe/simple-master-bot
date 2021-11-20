@@ -26,12 +26,11 @@ module.exports = {
         .setDescription("A flight at İstanbul Havalimanı has begun. You now have 15 minutes from when this message was originally posted to join the server before it's locked. More information on the flight can be seen above. https://www.roblox.com/games/8011176455/istanbul-redirect")
         .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
 
-        const msg = client.channels.cache.get(`911432166221692969`).send('@everyone', { embed: embed1, })
+        const message2 = client.channels.cache.get(`911432166221692969`).send('@ everyone', { embed: embed1, })
 
-        function closed() {
-            msg.Delete()
-             // 15 minutes later inform of slock
-		    const embed2 = new Discord.MessageEmbed();
+        setTimeout(function(){
+            message2.Delete()
+            const embed2 = new Discord.MessageEmbed();
          embed2
          .setColor("#c99666")
          .setTitle("Server Closed - İstanbul Havalimanı")
@@ -40,8 +39,6 @@ module.exports = {
          .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
 
           const msg = client.channels.cache.get(`911432166221692969`).send(embed2)
-        }
-
-        setTimeout(closed,30000)
+        },30000)
 	}
 }
