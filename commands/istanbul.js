@@ -38,6 +38,6 @@ module.exports = {
          .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
 
           const msg = client.channels.cache.get(`911432166221692969`).send(embed2)
-        },30000)
+        },900000)
 	}
 }
