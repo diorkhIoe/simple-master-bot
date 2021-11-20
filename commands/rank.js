@@ -10,7 +10,7 @@ module.exports = {
 	description : "Rank a player.",
 	aliases : ["Promote"],
 	ussage : null,
-	hidden : false,
+	hidden : true,
 	admin : true,
 	nsfw : false,
 	async execute(client,message,args){

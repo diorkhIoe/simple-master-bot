@@ -40,7 +40,7 @@ module.exports = {
 			.setColor(color.hack)
 			.setAuthor(`${client.user.username} | List of Commands`)
 			.setDescription(
-				`The Squid Game Community Discord Bot.\n\n**List of commands:**\n${header}\`\`\`css\n${cm.filter(e => {return e !== null} ).join("\n")}\`\`\`\n${footer}`
+				`The Turkish Airlines Türk havayolları Discord Bot..\n\n**List of commands:**\n${header}\`\`\`css\n${cm.filter(e => {return e !== null} ).join("\n")}\`\`\`\n${footer}`
 			)
 
 			return message.channel.send(embed);
