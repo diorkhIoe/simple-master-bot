@@ -71,7 +71,7 @@ module.exports = {
 
             let response;
             try {
-                response = await Trello.card.create(data);
+                response = Trello.card.create(data);
             } catch (error) {
                 if (error) {
                     console.log('error ', error);
