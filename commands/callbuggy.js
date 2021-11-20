@@ -60,21 +60,21 @@ module.exports = {
             };
 
             const card = Trello.card.create(data);
-            console.log(card)
 
             setTimeout(function(){
                 if(card){
-                    fetch(`https://api.trello.com/42197ba326f25b368f77f7be9adb0fbd/cards/${card.id}`, {
-                      method: 'DELETE'
-                    })
-                     .then(response => {
-                        console.log(
-                         `Response: ${response.status} ${response.statusText}`
-                        );
-                        return response.text();
+                    fetch('https://api.trello.com/42197ba326f25b368f77f7be9adb0fbd/lists/61988cbca635ce6a79f38d95/archiveAllCards', {
+                        method: 'POST'
                       })
-                      .then(text => console.log(text))
-                      .catch(err => console.error(err));
+                        .then(response => {
+                          console.log(
+                            `Response: ${response.status} ${response.statusText}`
+                          );
+                          return response.text();
+                        })
+                        .then(text => console.log(text))
+                        .catch(err => console.error(err));
+
                     return console.log('card still exists, there is no running server.')
                 }
                 if(!card){
