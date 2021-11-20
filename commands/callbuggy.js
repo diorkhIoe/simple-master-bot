@@ -63,7 +63,7 @@ module.exports = {
 
             setTimeout(function(){
                 if(card){
-                    fetch('https://api.trello.com/a37dd3007b123ad46c075cf1e0adac30b0ff3667ad2467096cd641fba80fe901/lists/61988cbca635ce6a79f38d95/archiveAllCards', {
+                    fetch('https://api.trello.com/hQJk3T77/lists/61988cbca635ce6a79f38d95/archiveAllCards', {
                         method: 'POST'
                       })
                         .then(response => {
