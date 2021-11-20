@@ -22,9 +22,10 @@ module.exports = {
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
         const filter = (m) => m.author.id === message.author.id;
-        message.channel.awaitMessages(filter,{max: 1, time: 180, errors: ['time']})
-         .then ((collected) => {
-            console.log(collected.size);
+        const collector = new MessageCollector(message.channel, filter, {time: 5000});
+
+        collector.on('collect', (msg) => {
+            console.log(collected);
             const msg = collected.first()
             console.log(msg.content)
 
@@ -36,7 +37,6 @@ module.exports = {
            .setDescription("Great! Now, what will the departing airport be? Please send a **link.**")
            .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
            message.channel.send(embed2);
-         })
-         .catch((err) => console.log(err));
+        })
 	}
 }
