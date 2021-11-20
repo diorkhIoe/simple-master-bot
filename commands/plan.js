@@ -13,28 +13,49 @@ module.exports = {
 	nsfw : false,
 	async execute(client,message,args){
 
+        const answers = []
+
         // send response to initial message
 		const embed = new Discord.MessageEmbed();
         embed
         .setColor("#c90119")
-        .setTitle("Planning Turkish Airlines Flight")
-        .setDescription("You've begun the process of planning a Turkish Airlines Flight. __What *Time* will this flight take place?__")
+        .setDescription("You've begun the process of planning a Turkish Airlines Flight. __What **Time** will this flight take place?__")
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
         const filter = (m) => m.author.id === message.author.id;
-        const collector = message.channel.createMessageCollector(filter, {time: 5000})
+        const collector = message.channel.createMessageCollector(filter, {time: 200})
 
         collector.on('collect', (msg) => {
             console.log(msg.content)
-
+            var flight_time = msg.content
             // send response to time question
-	    	const embed2 = new Discord.MessageEmbed();
-           embed2
+	        const embed2 = new Discord.MessageEmbed();
+             embed2
            .setColor("#c90119")
-           .setTitle("Planning Turkish Airlines Flight")
            .setDescription("Great! Now, what will the departing airport be? Please send a **link.**")
            .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
            message.channel.send(embed2);
+
+           const collector2 = message.channel.createMessageCollector(filter, {time: 200})
+
+           collector2.on('collect', (msg2) => {
+               console.log(msg2.content)
+               var airportlink = msg2.content
+            const embed3 = new Discord.MessageEmbed();
+            embed3
+             .setColor("#c90119")
+             .setDescription("Great! Now, what will the **destination** be? Please write this in __plain text.__")
+             .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
+            message.channel.send(embed3);
+
+            const collector3 = message.channel.createMessageCollector(filter, {time: 200})
+
+            collector3.on('collect', (msg3) => {
+                console.log(msg3.content)
+            })
+
+           })
+
         })
 	}
 }
