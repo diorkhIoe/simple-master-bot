@@ -1,7 +1,7 @@
 // init require
 const Discord = require('discord.js');
 var cooldown = false
-import * as TrelloNodeAPI from 'trello-node-api';
+import TrelloNodeAPI from 'trello-node-api';
  
 const Trello = new TrelloNodeAPI();
 Trello.setApiKey('42197ba326f25b368f77f7be9adb0fbd');
