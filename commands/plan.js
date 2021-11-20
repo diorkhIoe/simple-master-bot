@@ -29,7 +29,7 @@ module.exports = {
         const collector = message.channel.createMessageCollector(filter, { max: 1, time: 180000 })
 
         collector.on('collect', (msg) => {
-            if (msg.content == "cancel"){return}
+            if (msg.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
             console.log(msg.content)
             var flight_time = msg.content
             // send response to time question
@@ -45,7 +45,7 @@ module.exports = {
            const collector2 = message.channel.createMessageCollector(filter2, { max: 1, time: 180000 })
 
            collector2.on('collect', (msg2) => {
-            if (msg2.content == "cancel"){return}
+            if (msg2.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
                console.log(msg2.content)
                var airportlink = msg2.content
                 const embed3 = new Discord.MessageEmbed();
@@ -59,7 +59,7 @@ module.exports = {
                 const collector3 = message.channel.createMessageCollector(filter3, { max: 1, time: 180000 })
 
                  collector3.on('collect', (msg3) => {
-                    if (msg3.content == "cancel"){return}
+                    if (msg3.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
                     console.log(msg3.content)
                     var flightdest = msg3.content
                     const embed4 = new Discord.MessageEmbed();
@@ -73,7 +73,7 @@ module.exports = {
                     const filter4 = (m) => m.author.id === message.author.id;
                     const collector4 = message.channel.createMessageCollector(filter4, { max: 1, time: 180000 })
                     collector4.on('collect', (msg4) => {
-                        if (msg4.content == "cancel"){return}
+                        if (msg4.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
                         console.log(msg4.content)
                         var flightdate = msg4.content
                         const embed5 = new Discord.MessageEmbed();
@@ -87,7 +87,7 @@ module.exports = {
                         const filter5 = (m) => m.author.id === message.author.id;
                         const collector5 = message.channel.createMessageCollector(filter5, { max: 1, time: 180000 })
                         collector5.on('collect', (msg5) => {
-                            if (msg5.content == "cancel"){return}
+                            if (msg5.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
                             console.log(msg5.content)
                             var flighthost = msg5.content
 
