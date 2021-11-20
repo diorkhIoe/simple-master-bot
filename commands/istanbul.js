@@ -42,6 +42,6 @@ module.exports = {
           const msg = client.channels.cache.get(`911432166221692969`).send(embed2)
         }
 
-        setTimeout(closed,900000)
+        setTimeout(closed,30000)
 	}
 }
