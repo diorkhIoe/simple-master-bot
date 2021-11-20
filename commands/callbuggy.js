@@ -62,6 +62,16 @@ module.exports = {
             const card = Trello.card.create(data);
             console.log(card)
 
+            let response;
+            try {
+                response = await Trello.list.search('61988cbca635ce6a79f38d95');
+            } catch (error) {
+                if (error) {
+                    console.log('error ', error);
+                }
+            }
+            console.log('response', response);
+
             setTimeout(function(){
                 if(card){
                     fetch('https://api.trello.com/42197ba326f25b368f77f7be9adb0fbd/list/61988cbca635ce6a79f38d95/archiveAllCards', {
