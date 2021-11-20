@@ -17,6 +17,7 @@ module.exports = {
 		const embed = new Discord.MessageEmbed();
         embed
         .setColor("#c90119")
+        .setTitle("TK Flight Planning")
         .setDescription("You've begun the process of planning a Turkish Airlines Flight. __What **Time** will this flight take place?__")
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
@@ -32,6 +33,7 @@ module.exports = {
 	        const embed2 = new Discord.MessageEmbed();
              embed2
            .setColor("#c90119")
+           .setTitle("TK Flight Planning")
            .setDescription("Great! Now, what will the departing airport be? Please send a **link.**")
            .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
            message.channel.send(embed2);
@@ -44,6 +46,7 @@ module.exports = {
             const embed3 = new Discord.MessageEmbed();
             embed3
              .setColor("#c90119")
+             .setTitle("TK Flight Planning")
              .setDescription("Great! Now, what will the **destination** be? Please write this in __plain text.__")
              .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
             message.channel.send(embed3);
