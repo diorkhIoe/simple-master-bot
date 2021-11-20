@@ -94,7 +94,7 @@ module.exports = {
                             embed7
                             .setColor("#c99666")
                             .setTitle("Upcoming Turkish Airlines Flight")
-                            .setImage("https://cdn.discordapp.com/attachments/909976331897425941/911437845313519616/oh_em_gee.mov")
+                            .setImage("https://cdn.discordapp.com/attachments/909976331897425941/911441708552695849/oh_em_gee.mp4")
                             .setDescription("An upcoming flight is being hosted. You must join 15 minutes before the flight time indicated below.")
                             .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
                             .addFields(
