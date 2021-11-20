@@ -94,7 +94,6 @@ module.exports = {
                             embed7
                             .setColor("#c99666")
                             .setTitle("Upcoming Turkish Airlines Flight")
-                            .setImage("https://cdn.discordapp.com/attachments/909976331897425941/911441708552695849/oh_em_gee.mp4")
                             .setDescription("An upcoming flight is being hosted. You must join 15 minutes before the flight time indicated below.")
                             .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
                             .addFields(
@@ -106,6 +105,7 @@ module.exports = {
                             )
 
                             client.channels.cache.get(`911432166221692969`).send('@ everyone', { embed: embed7, })
+                            client.channels.cache.get(`911432166221692969`).send('https://cdn.discordapp.com/attachments/909976331897425941/911441708552695849/oh_em_gee.mp4')
                             message.channel.send('Flight Scheduled.')
                         })
                     })
