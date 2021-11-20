@@ -105,6 +105,7 @@ module.exports = {
                             )
 
                             client.channels.cache.get(`911432166221692969`).send(embed7)
+                            message.channel.send('Flight Scheduled.')
                         })
                     })
                 })
