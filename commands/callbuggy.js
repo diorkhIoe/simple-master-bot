@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 var cooldown = false
 const Trello = require('trello-node-api')("42197ba326f25b368f77f7be9adb0fbd", "5c9074bc7cc291655ba6dce70e75a4357ba993a4b6ed45fa0bea9b4004853288");
-const fetch = require('node-fetch@2');
+const fetch = require('node-fetch');
 
 // export module
 module.exports = {
