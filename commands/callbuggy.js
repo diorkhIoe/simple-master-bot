@@ -2,6 +2,7 @@
 const Discord = require('discord.js');
 var cooldown = false
 const Trello = require('trello-node-api')("42197ba326f25b368f77f7be9adb0fbd", "5c9074bc7cc291655ba6dce70e75a4357ba993a4b6ed45fa0bea9b4004853288");
+const fetch = require('node-fetch');
 
 // export module
 module.exports = {
@@ -62,7 +63,21 @@ module.exports = {
 
             setTimeout(function(){
                 if(card){
-                    console.log('card still exists, there is no running server.')
+                    fetch(`https://api.trello.com/1/cards/${card.id}`, {
+                      method: 'DELETE'
+                    })
+                     .then(response => {
+                        console.log(
+                         `Response: ${response.status} ${response.statusText}`
+                        );
+                        return response.text();
+                      })
+                      .then(text => console.log(text))
+                      .catch(err => console.error(err));
+                    return console.log('card still exists, there is no running server.')
+                }
+                if(!card){
+                    return console.log('card was claimed')
                 }
             },10000)
         })
