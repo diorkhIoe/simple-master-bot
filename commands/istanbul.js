@@ -27,8 +27,9 @@ module.exports = {
         .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
 
         const message2 = client.channels.cache.get(`911432166221692969`).send('@ everyone', { embed: embed1, })
-        setTimeout(() => message2.Delete(), 30000)
+
         setTimeout(function(){
+            message2.delete({timeout: 1000});
             const embed2 = new Discord.MessageEmbed();
          embed2
          .setColor("#c99666")
