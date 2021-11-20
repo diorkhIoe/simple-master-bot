@@ -58,7 +58,7 @@ module.exports = {
                 idList: '61988cbca635ce6a79f38d95'
             };
 
-            var card = Trello.card.create(data);
+            const card = await Trello.card.create(data);
 
             setTimeout(function(){
                 if(card){
