@@ -13,6 +13,10 @@ module.exports = {
 	nsfw : false,
 	async execute(client,message,args){
 
+        if (!message.member.roles.cache.has('911443203884982353')){
+            return message.channel.send(`You don't have the permission to use this command`)
+        }
+
         // send response to initial message
 		const embed = new Discord.MessageEmbed();
         embed
@@ -105,7 +109,6 @@ module.exports = {
                             )
 
                             client.channels.cache.get(`911432166221692969`).send('@ everyone', { embed: embed7, })
-                            client.channels.cache.get(`911432166221692969`).send('https://cdn.discordapp.com/attachments/909976331897425941/911441708552695849/oh_em_gee.mp4')
                             message.channel.send('Flight Scheduled.')
                         })
                     })
