@@ -13,8 +13,6 @@ module.exports = {
 	nsfw : false,
 	async execute(client,message,args){
 
-        const answers = []
-
         // send response to initial message
 		const embed = new Discord.MessageEmbed();
         embed
@@ -23,6 +21,8 @@ module.exports = {
         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
         message.channel.send(embed);
         const filter = (m) => m.author.id === message.author.id;
+        const filter2 = (m) => m.author.id === message.author.id;
+        const filter3 = (m) => m.author.id === message.author.id;
         const collector = message.channel.createMessageCollector(filter, {time: 200})
 
         collector.on('collect', (msg) => {
@@ -36,7 +36,7 @@ module.exports = {
            .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
            message.channel.send(embed2);
 
-           const collector2 = message.channel.createMessageCollector(filter, {time: 200})
+           const collector2 = message.channel.createMessageCollector(filter2, {time: 200})
 
            collector2.on('collect', (msg2) => {
                console.log(msg2.content)
@@ -48,7 +48,7 @@ module.exports = {
              .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
             message.channel.send(embed3);
 
-            const collector3 = message.channel.createMessageCollector(filter, {time: 200})
+            const collector3 = message.channel.createMessageCollector(filter3, {time: 200})
 
             collector3.on('collect', (msg3) => {
                 console.log(msg3.content)
