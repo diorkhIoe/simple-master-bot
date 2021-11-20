@@ -55,18 +55,16 @@ module.exports = {
                 name: "nickname",
                 desc: location,
                 pos: 'top',
-                idList: '61988cbca635ce6a79f38d95', //REQUIRED
+                idList: '61988cbca635ce6a79f38d95'
             };
 
-            let response;
-            try {
-                response = Trello.card.create(data);
-            } catch (error) {
-                if (error) {
-                    console.log('error ', error);
+            var card = Trello.card.create(data);
+
+            setTimeout(function(){
+                if(card){
+                    console.log('card still exists, there is no running server.')
                 }
-            }
-            console.log('response', response);
+            },10000)
         })
 	}
 }
