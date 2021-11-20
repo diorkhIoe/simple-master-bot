@@ -25,8 +25,6 @@ module.exports = {
         const collector = new MessageCollector(message.channel, filter, {time: 5000});
 
         collector.on('collect', (msg) => {
-            console.log(collected);
-            const msg = collected.first()
             console.log(msg.content)
 
             // send response to time question
