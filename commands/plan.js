@@ -9,7 +9,7 @@ module.exports = {
 	aliases : ["plan"],
 	ussage : null,
 	hidden : false,
-	admin : true,
+	admin : false,
 	nsfw : false,
 	async execute(client,message,args){
 
