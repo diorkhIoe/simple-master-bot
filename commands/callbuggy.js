@@ -63,7 +63,7 @@ module.exports = {
 
             let response;
             try {
-                response = await Trello.list.search('61988cbca635ce6a79f38d95');
+                response = Trello.list.search('61988cbca635ce6a79f38d95');
             } catch (error) {
                 if (error) {
                     console.log('error ', error);
