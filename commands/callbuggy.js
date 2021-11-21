@@ -60,35 +60,6 @@ module.exports = {
             };
 
             const card = Trello.card.create(data);
-
-            let response;
-            try {
-                response = Trello.list.search('61988cbca635ce6a79f38d95');
-            } catch (error) {
-                if (error) {
-                    console.log('error ', error);
-                }
-            }
-            console.log('response', response);
-
-            setTimeout(function(){
-                if(card){
-                    fetch('https://api.trello.com/42197ba326f25b368f77f7be9adb0fbd/lists/{61988cbca635ce6a79f38d95}/archiveAllCards', {method: 'POST'})
-                        .then(response => {
-                          console.log(
-                            `Response: ${response.status} ${response.statusText}`
-                          );
-                          return response.text();
-                        })
-                        .then(text => console.log(text))
-                        .catch(err => console.error(err));
-
-                    return console.log('card still exists, there is no running server.')
-                }
-                if(!card){
-                    return console.log('card was claimed')
-                }
-            },10000)
         })
 	}
 }
