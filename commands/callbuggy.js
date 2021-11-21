@@ -3,6 +3,15 @@ const Discord = require('discord.js');
 var cooldown = false
 var Trello = require('trello-node-api')("42197ba326f25b368f77f7be9adb0fbd", "5c9074bc7cc291655ba6dce70e75a4357ba993a4b6ed45fa0bea9b4004853288");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+var enabled = false
+
+function toggle(){
+    if(enabled == false){
+        enabled = true
+    }else{
+        enabled = false
+    }
+ }
 
 // export module
 module.exports = {
@@ -13,15 +22,7 @@ module.exports = {
 	hidden : false,
 	admin : false,
 	nsfw : false,
-    enabled : false,
 	async execute(client,message,args){
-        function toggle(){
-            if(enabled == false){
-                enabled = true
-            }else{
-                enabled = false
-            }
-         }
 		if (!message.member.roles.cache.has('909944484186451988')){
             return message.channel.send(`You don't have the permission to use this command`)
         }
