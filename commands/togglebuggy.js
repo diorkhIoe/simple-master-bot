@@ -1,6 +1,6 @@
 // init require
 const Discord = require('discord.js');
-const jQuery = require('jquery')
+const callbuggy = require ('./commands/callbuggy')
 
 // export module
 module.exports = {
@@ -15,9 +15,7 @@ module.exports = {
 		if (!message.member.roles.cache.has('909937346613489674')){
             return message.channel.send(`You don't have the permission to use this command`)
         }
-		jQuery.getscript("callbuggy",function(){
-            toggle();
-        });
+		callbuggy.toggle()
         message.channel.send(`Requested.`)
 	}
 }

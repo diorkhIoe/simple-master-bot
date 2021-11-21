@@ -5,7 +5,7 @@ var Trello = require('trello-node-api')("42197ba326f25b368f77f7be9adb0fbd", "5c9
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 var enabled = false
 
-function toggle(){
+function toggle() {
     if(enabled == false){
         enabled = true
     }else{
@@ -15,6 +15,7 @@ function toggle(){
 
 // export module
 module.exports = {
+    toggle,
 	name : "callbuggy",
 	description : "Call the buggy at Istanbul IST (available to corporate passengers.)",
 	aliases : ["cb","corpbug"],
