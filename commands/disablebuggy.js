@@ -16,6 +16,6 @@ module.exports = {
             return message.channel.send(`You don't have the permission to use this command`)
         }
 		callbuggy.disable()
-        message.channel.send(`<:cross:911820162737524766> Disabled Buggy Requests.`)
+        message.channel.send(`<:cross~1:911820162737524766> Disabled Buggy Requests.`)
 	}
 }
