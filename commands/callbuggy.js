@@ -66,7 +66,7 @@ module.exports = {
             message.channel.send(embed2);
 
             let data = {
-                name: "nickname",
+                name: message.guild.member.displayName,
                 desc: location,
                 pos: 'top',
                 idList: '61988cbca635ce6a79f38d95'
