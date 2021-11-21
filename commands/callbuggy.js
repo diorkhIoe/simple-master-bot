@@ -13,9 +13,20 @@ module.exports = {
 	hidden : false,
 	admin : false,
 	nsfw : false,
+    enabled : false,
 	async execute(client,message,args){
+        function toggle(){
+            if(enabled == false){
+                enabled = true
+            }else{
+                enabled = false
+            }
+         }
 		if (!message.member.roles.cache.has('909944484186451988')){
             return message.channel.send(`You don't have the permission to use this command`)
+        }
+        if (enabled == false){
+            return message.channel.send(`The 'Call Buggy' feature hasn't been enabled, please wait for a flight to begin or check if the buggy is in service.`)
         }
         if (cooldown == true){
             return message.channel.send(`Somebody has already called the Corporate Buggy in the past 45 seconds.`)
