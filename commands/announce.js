@@ -111,11 +111,9 @@ module.exports = {
                         .setTimestamp()
                         .setDescription(mainbodytext)
                         .setAuthor("Turkish Airlines Announcement")
-
                         if (!image == ""){
                             embed5.setImage(image)
                         }
-    
                         chnl.send('@everyone', { embed: embed5 });
                     })
                 })

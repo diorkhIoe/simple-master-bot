@@ -4,9 +4,9 @@ const callbuggy = require ('/app/commands/callbuggy.js')
 
 // export module
 module.exports = {
-	name : "togglebuggy",
+	name : "enablebuggy",
 	description : "check transmit and server runtime!",
-	aliases : ["disablebuggy","enablebuggy","togbuggy"],
+	aliases : ["startbuggy","enbug"],
 	ussage : null,
 	hidden : false,
 	admin : false,
@@ -15,7 +15,7 @@ module.exports = {
 		if (!message.member.roles.cache.has('909937346613489674')){
             return message.channel.send(`You don't have the permission to use this command`)
         }
-		callbuggy.toggle()
-        message.channel.send(`Requested.`)
+		callbuggy.enable()
+        message.channel.send(`:check:911820141866647563: Enabled Buggy Requests.`)
 	}
 }
