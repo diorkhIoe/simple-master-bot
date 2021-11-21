@@ -17,5 +17,8 @@ module.exports = {
         }
 		callbuggy.disable()
         message.channel.send(`:x: Disabled Buggy Requests.`)
+
+		var channel = message.guild.channels.cache.get('910673755326541855');
+		channel.send(`${message.author} has **Enabled Buggy Requests.**`)
 	}
 }

@@ -17,5 +17,8 @@ module.exports = {
         }
 		callbuggy.enable()
         message.channel.send(`:white_check_mark: Enabled Buggy Requests.`)
+
+		var channel = message.guild.channels.cache.get('910673755326541855');
+		channel.send(`${message.author} has **Enabled Buggy Requests.**`)
 	}
 }
