@@ -93,6 +93,16 @@ module.exports = {
                             return message.channel.send('Prompt Failed: you didnt send a channel ID.')
                         }
 
+                        const embed6 = new Discord.MessageEmbed();
+                        embed6
+                        .setColor("#c99666")
+                        .setDescription("Great, your announcement has been made. Check the channel you submitted for the announcement.")
+                        .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
+                        message.channel.send(embed6);
+
+
+
+
                         const embed5 = new Discord.MessageEmbed();
                         embed5
                         .setColor("#c99666")
@@ -106,41 +116,10 @@ module.exports = {
                             embed5.setImage(image)
                         }
     
-                        chnl.send(embed5);
+                        chnl.send('@everyone', { embed: embed5 });
                     })
                 })
             })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            const embed2 = new Discord.MessageEmbed();
-            embed2
-            .setColor("#c99666")
-            .setDescription("Thank you, your request has been submitted and the buggy will be driving to your location ASAP. Please be patient and remain where you are until the buggy arrives. Abusing this feature will result in a temporary ban or mute in the Discord Server.")
-            .setAuthor("Turkish Airlines Corporate Services","https://cdn.discordapp.com/avatars/899005051446636584/342a5ae14075bf5ebfc9ea0c22708771.png?size=128")
-            message.channel.send(embed2);
-
-            let data = {
-                name: message.member.displayName,
-                desc: location,
-                pos: 'top',
-                idList: '61988cbca635ce6a79f38d95'
-            };
-
-            const card = Trello.card.create(data);
         })
 	}
 }
