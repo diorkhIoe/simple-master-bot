@@ -16,6 +16,6 @@ module.exports = {
             return message.channel.send(`You don't have the permission to use this command`)
         }
 		callbuggy.enable()
-        message.channel.send(`:check:911820141866647563: Enabled Buggy Requests.`)
+        message.channel.send(`:911820141866647563: Enabled Buggy Requests.`)
 	}
 }
