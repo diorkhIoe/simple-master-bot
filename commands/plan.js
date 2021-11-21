@@ -84,7 +84,7 @@ module.exports = {
                         embed5
                         .setColor("#c90119")
                         .setTitle("TK Flight Planning")
-                        .setDescription("To wrap up this post, who will be **hosting the flight?** Please say the **Roblox Userame or Discord Tag** of the flight host.")
+                        .setDescription("Now, who will be **hosting the flight?** Please say the **Roblox Userame or Discord Tag** of the flight host.")
                         .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
                         .setFooter("Say 'cancel' to end this prompt.")
                         message.channel.send(embed5)
@@ -96,30 +96,65 @@ module.exports = {
                             console.log(msg5.content)
                             var flighthost = msg5.content
 
-                            const embed6 = new Discord.MessageEmbed();
-                            embed6
+                            const embed8 = new Discord.MessageEmbed();
+                            embed8
                             .setColor("#c90119")
                             .setTitle("TK Flight Planning")
-                            .setDescription("Alright, thank you for all this information. I will now post this flight in the <#911432166221692969> channel.")
+                            .setDescription("Do you have any extra information about this flight? If so, please state such.")
                             .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
-                            message.channel.send(embed6)
+                            .setFooter("Say 'cancel' to end this prompt.")
+                            message.channel.send(embed8)
 
-                            const embed7 = new Discord.MessageEmbed();
-                            embed7
-                            .setColor("#c99666")
-                            .setTitle("Upcoming Turkish Airlines Flight")
-                            .setDescription("An upcoming flight is being hosted. You must join 15 minutes before the flight time indicated below.")
-                            .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
-                            .addFields(
-                                { name: 'Airport:', value: airportlink, inline: true },
-                                { name: 'Destination:', value: flightdest, inline: true },
-                                { name: 'Flight Time:', value: flight_time, inline: true },
-                                { name: 'Flight Date:', value: flightdate, inline: true },
-                                { name: 'Flight Host:', value: flighthost, inline: true }
-                            )
+                            const filter6 = (m) => m.author.id === message.author.id;
+                            const collector6 = message.channel.createMessageCollector(filter6, { max: 1, time: 180000 })
+                            collector6.on('collect', (msg6) => {
+                                if (msg6.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
+                                var extraflightinfo = msg6.content
+                                console.log(extraflightinfo)
 
-                            client.channels.cache.get(`911432166221692969`).send('@ everyone', { embed: embed7, })
-                            message.channel.send('Flight Scheduled.')
+                                const embed9 = new Discord.MessageEmbed();
+                                embed9
+                                .setColor("#c90119")
+                                .setTitle("TK Flight Planning")
+                                .setDescription("Now finally, which aircraft will you be flying on this flight?")
+                                .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
+                                .setFooter("Say 'cancel' to end this prompt.")
+                                message.channel.send(embed9)
+
+                                const filter7 = (m) => m.author.id === message.author.id;
+                                const collector7 = message.channel.createMessageCollector(filter7, { max: 1, time: 180000 })
+                                collector7.on('collect', (msg7) => {
+                                    var aircraft = msg7.content
+                                    console.log(aircraft)
+
+                                    const embed6 = new Discord.MessageEmbed();
+                                    embed6
+                                    .setColor("#c90119")
+                                    .setTitle("TK Flight Planning")
+                                    .setDescription("Alright, thank you for all this information. I will now post this flight in the <#911432166221692969> channel.")
+                                    .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
+                                    message.channel.send(embed6)
+
+                                    const embed7 = new Discord.MessageEmbed();
+                                    embed7
+                                    .setColor("#c99666")
+                                    .setTitle("Upcoming Turkish Airlines Flight")
+                                    .setDescription("An upcoming flight is being hosted. You must join 15 minutes before the flight time indicated below.")
+                                    .setAuthor("Turkish Airlines Flight Schedule","https://cdn.discordapp.com/attachments/909976389116133406/911433917821775882/goldentk.png")
+                                    .addFields(
+                                        { name: 'Airport:', value: airportlink, inline: true },
+                                        { name: 'Flight Time:', value: flight_time, inline: true },
+                                        { name: 'Flight Date:', value: flightdate, inline: true },
+                                        { name: 'Flight Host:', value: flighthost, inline: true },
+                                        { name: 'Destination:', value: flightdest, inline: true },
+                                        { name: 'Aircraft:', value: aircraft, inline: true },
+                                        { name: 'Details:', value: extraflightinfo, inline: true },
+                                    )
+
+                                    client.channels.cache.get(`911432166221692969`).send('@everyone', { embed: embed7, })
+                                    message.channel.send('Flight Scheduled.')
+                                })
+                            })
                         })
                     })
                 })
