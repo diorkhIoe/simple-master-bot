@@ -1,6 +1,6 @@
 // init require
 const Discord = require('discord.js');
-const callbuggy = require ('.\commands\callbuggy.js')
+const callbuggy = require ('./app/commands/callbuggy.js')
 
 // export module
 module.exports = {
