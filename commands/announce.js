@@ -63,7 +63,7 @@ module.exports = {
                 const collector3 = message.channel.createMessageCollector(filter3, { max: 1, time: 45000 })
                 collector3.on('collect', (msg3) => {
                     if (msg3.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
-                    var image = null
+                    var image = ''
                     if (!msg3.content == "skip"){
                         image = msg3.content
                     }
@@ -110,9 +110,7 @@ module.exports = {
                         .setFooter(message.member.displayName,message.author.displayAvatarURL)
                         .setTimestamp()
                         .setDescription(mainbodytext)
-                        if (imageval){
-                            embed5.setImage(imageval)
-                        }
+                        .setImage(imageval)
                         chnl.send('@everyone', { embed: embed5 });
                     })
                 })
