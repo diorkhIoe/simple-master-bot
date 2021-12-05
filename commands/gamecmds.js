@@ -4,9 +4,9 @@ const callbuggy = require ('/app/commands/callbuggy.js')
 
 // export module
 module.exports = {
-	name : "disablebuggy",
-	description : "check transmit and server runtime!",
-	aliases : ["stopbuggy","stopbug"],
+	name : "staffcmds",
+	description : "check the list of staff commands at Istanbul Havalimani.",
+	aliases : ["staff","staffhelp"],
 	ussage : null,
 	hidden : false,
 	admin : false,
@@ -15,10 +15,6 @@ module.exports = {
 		if (!message.member.roles.cache.has('909937346613489674')){
             return message.channel.send(`You don't have the permission to use this command`)
         }
-		callbuggy.disable()
-        message.channel.send(`:x: Disabled Buggy Requests.`)
-
-		var channel = message.guild.channels.cache.get('910673755326541855');
-		channel.send(`${message.author} has **Disabled Buggy Requests.**`)
+        message.channel.send("```LIST OF COMMANDS AT ISTANBUL HAVALIMANI\n=======================================\n/set gate (gate)\n/set radars on\n/set radars off\n/set directions on\n/set directions off\n/play\n/tp```")
 	}
 }
