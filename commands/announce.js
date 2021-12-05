@@ -118,8 +118,8 @@ module.exports = {
                         .setFooter(message.member.displayName,message.author.displayAvatarURL)
                         .setTimestamp()
                         .setDescription(mainbodytext)
-                        if(imageval != 'none'){
-                            embed5.setImage(imageval)
+                        if(image != 'none'){
+                            embed5.setImage(image)
                         }
                         chnl.send('@everyone', { embed: embed5 });
                     })
