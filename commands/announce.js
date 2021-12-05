@@ -1,6 +1,12 @@
 // init require
 const Discord = require('discord.js');
 
+function attachIsImage(msgAttach) {
+    var url = msgAttach.url;
+    //True if this url is a png image.
+    return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
+}
+
 // export module
 module.exports = {
 	name : "announce",
@@ -54,7 +60,7 @@ module.exports = {
                 .setColor("#c90119")
                 .setTitle("Create Announcement")
                 .setFooter("Say 'cancel' to end this prompt.")
-                .setDescription("Fantastic! Now, would you like to add an image to your announcement? If so, please send a link to the image. **If not, say 'skip'**")
+                .setDescription("Fantastic! Now, would you like to add an image to your announcement? If so, please send an **attachment, not a link** to the image. **If not, say 'skip'**")
                 .setAuthor("Turkish Airlines Administrative A.I.","https://cdn.discordapp.com/attachments/909976331897425941/911410962362429490/turkish-airlines-logo-1E368810A4-seeklogo.com.png")
     
                 message.channel.send(embed3);
@@ -65,7 +71,9 @@ module.exports = {
                     if (msg3.content == "cancel"){return message.channel.send('Prompt Failed: Author cancelled')}
                     var image = ''
                     if (!msg3.content == "skip"){
-                        image = msg3.content
+                        image = ''
+                    }else if(msg3.attachments.size > 0){
+                        image = msg3.attachments.every(attachIsImage)
                     }
 
                     const embed4 = new Discord.MessageEmbed();
@@ -110,7 +118,9 @@ module.exports = {
                         .setFooter(message.member.displayName,message.author.displayAvatarURL)
                         .setTimestamp()
                         .setDescription(mainbodytext)
-                        .setImage(imageval)
+                        if(imageval){
+                            embed5.setImage(imageval)
+                        }
                         chnl.send('@everyone', { embed: embed5 });
                     })
                 })
