@@ -73,7 +73,7 @@ module.exports = {
                     if (!msg3.content == "skip"){
                         image = 'none'
                     }else if(msg3.attachments.size > 0){
-                        image = msg3.attachments.every(attachIsImage)
+                        image = msg3.attachments.first().url;
                     }
 
                     const embed4 = new Discord.MessageEmbed();
@@ -113,7 +113,7 @@ module.exports = {
 
                         const embed5 = new Discord.MessageEmbed();
                         embed5
-                        .setColor("#c99666")
+                        .setColor("#c40031")
                         .setTitle(title)
                         .setFooter(message.member.displayName,message.author.displayAvatarURL)
                         .setTimestamp()
